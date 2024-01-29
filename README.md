@@ -357,7 +357,7 @@ Model akan dikembangkan dengan 3 algoritma yang berbeda, dan mencari mana yang m
 
       _Mean Squared Error (MSE)_ dihitung brdasarkan formula:
 
-      $\[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]$
+      $$MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 
       Dimana $\( n \)$ adalah angka observasi, $\( y_i \)$ adalah nilai aktual, dan $\( \hat{y}_i \)$ adalah nilai prediksi.
 
