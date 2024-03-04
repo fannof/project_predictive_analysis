@@ -322,9 +322,9 @@ Model akan dikembangkan dengan 3 algoritma yang berbeda, dan mencari mana yang m
   | RF       | 12390218.332403 | 58255407.24918  |
   | Boosting | 49336053.971147 | 51079691.292662 |
 
-  Gambar 11. Plot metrik evaluasi perbandingan antar algoritma
-
   ![image](https://github.com/fannof/project_predictive_analysis/assets/99071605/5985c172-5ba8-49a3-b9d9-530935352cae)
+
+  Gambar 11. Plot metrik evaluasi perbandingan antar algoritma
 
 - Hasil proyek berdasarkan metrik evaluasi
   1. _K-Nearest Neighbors (k-NN)_:
@@ -361,7 +361,7 @@ Model akan dikembangkan dengan 3 algoritma yang berbeda, dan mencari mana yang m
 
       $$MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 
-      Dimana $\( n \)$ adalah angka observasi, $\( y_i \)$ adalah nilai aktual, dan $\( \hat{y}_i \)$ adalah nilai prediksi.
+      Dimana $n$ adalah angka observasi, $y_i$ adalah nilai aktual, dan $\hat{y}_i$ adalah nilai prediksi.
 
       - Cara Kerja:
 
