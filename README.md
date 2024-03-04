@@ -112,22 +112,21 @@ Dapat dilihat pada tabel 2 untuk rata-rata harga rumah yaitu berada pada angka 9
 
   Pada kasus ini, akan dideteksi _outliers_ dengan teknik visualisasi data _(boxplot)_. Kemudian, _outliers_ akan ditangani dengan teknik _IQR method_. setelah ditangani dengan metode _IQR method_, dataset yang tersisa menjadi 1682 data.
 
-  Gambar 1. Deteksi _outliers_ pada kolom 'beds'
-
   ![beds](https://github.com/fannof/project_predictive_analysis/assets/99071605/30d6a272-05ce-40f2-b8f3-6b172301e2e0)
 
+  Gambar 1. Deteksi _outliers_ pada kolom 'beds'
 
   Terlihat pada gambar 1, terdapat 4 _outliers_ di kolom 'beds'.
 
-  Gambar 2. Deteksi _outliers_ pada kolom 'baths'
-
   ![image](https://github.com/fannof/project_predictive_analysis/assets/99071605/5e8ae48e-c7c4-4c26-8fd9-7829b2478f78)
+
+  Gambar 2. Deteksi _outliers_ pada kolom 'baths'
 
   Terlihat pada gambar 2, terdapat 6 _outliers_ di kolom 'baths'
 
-  Gambar 3. Deteksi _outliers_ pada kolom 'size'
-
   ![image](https://github.com/fannof/project_predictive_analysis/assets/99071605/f97ce15a-a3cc-49be-be23-00760a9470b2)
+
+  Gambar 3. Deteksi _outliers_ pada kolom 'size'
 
   Pada gambar 3, terdapat banyak sekali _outliers_, semua _outliers_ ini akan ditangani dengan metode _IQR Method_.
 
@@ -137,22 +136,22 @@ Dapat dilihat pada tabel 2 untuk rata-rata harga rumah yaitu berada pada angka 9
 Peningkatan harga rumah sebanding dengan penurunan jumlah sampel. Hal ini dapat dilihat jelas dari histogram "price" pada gambar 4, dimana grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu x).
 Semakin tinggi 'size', jumlah 'beds', dan jumlah 'baths' dalam rumah, maka semakin mahal pula harga rumah.
 
-  Gambar 4. Plot grafik masing-masing fitur
-
   ![image](https://github.com/fannof/project_predictive_analysis/assets/99071605/1d2c2658-3292-4522-a8a7-100deff8dd2b)
+
+  Gambar 4. Plot grafik masing-masing fitur
 
 - _Multivariate analysis_
 
   Selanjutnya, akan dilakukan analisis data pada fitur numerik menggunakan teknik _Multivariate EDA_ menggunakan fungsi _pairplot()_ dan juga akan mengobservasi korelasi antara fitur numerik dengan fitur target menggunakan fungsi _corr()_.
   Pada gambar 5 yaitu pola sebaran data grafik _pairplot_, terlihat fitur "size" memiliki korelasi positif dengan fitur "price". Sedangkan kedua fitur "lot_size" dan "price" tidak memliki korelasi karena tidak membetuk pola.
 
-  Gambar 5. Grafik korelasi antar fitur numerik dan fitur target
-
   ![image](https://github.com/fannof/project_predictive_analysis/assets/99071605/c38c6c64-e41a-45eb-9022-7a6d66971ff9)
 
-  Gambar 6. Matrik korelasi antar fitur numerik
+  Gambar 5. Grafik korelasi antar fitur numerik dan fitur target
 
   ![image](https://github.com/fannof/project_predictive_analysis/assets/99071605/570e873b-5804-431d-b0f2-10efdbed5690)
+
+  Gambar 6. Matrik korelasi antar fitur numerik
 
   Pada gambar 6, grafik korelasi terlihat bahwa fitur 'beds', 'baths', dan 'size' memiliki skor korelasi yang besar dengan fitur target 'price'. Artinya, fitur 'price' berkorelasi tinggi dengan ketiga fitur tersebut. Sementara itu, fitur 'lot_size' dan 'zip_code' memiliki korelasi yang sangat kecil sehingga fitur tersebut dapat _di-drop_.
 
@@ -166,9 +165,9 @@ Semakin tinggi 'size', jumlah 'beds', dan jumlah 'baths' dalam rumah, maka semak
   | 5 |    2 |   2.0 | 1190.0 | 740000.0 |
   | 6 |    1 |   1.0 |  670.0 | 460000.0 |
 
-  Gambar 7. Grafik plot antar fitur numerik setelah fitur yang tidak dibutuhkan _di-drop_
-
   ![image](https://github.com/fannof/project_predictive_analysis/assets/99071605/89e1a48b-9af0-426a-a357-16fcf9c87624)
+
+  Gambar 7. Grafik plot antar fitur numerik setelah fitur yang tidak dibutuhkan _di-drop_
 
 ## Data Preparation
 
@@ -233,10 +232,11 @@ Model akan dikembangkan dengan 3 algoritma yang berbeda, dan mencari mana yang m
    Tujuan algoritma ini adalah untuk mengklasifikasikan objek baru berdasarkan atribut dan data sampel-sampel dari set pelatihan.
    Algoritma _k-Nearest Neighbor_ menggunakan _Neighborhood Classification_ sebagai nilai prediksi yang berasal dari instance baru [3]. Seperti yang terlihat pada gambar 8.
 
-   Gambar 8. Algoritma _k-NN_
-
    ![th](https://github.com/fannof/project_predictive_analysis/assets/99071605/2ac7ac6a-1790-4f6e-8a9b-82645c01735b)
 
+   Gambar 8. Algoritma _k-NN_
+
+   _(Sumber: https://id.images.search.yahoo.com/images/view)_
 
     Langkah yang pertama, model _k-NN_ diinisialisasi dengan menentukan jumlah tetangga terdekat _(parameter n_neighbors)_. Contoh dalam kasus ini adalah _n_neighbors_ diatur ke 10, artinya model akan menggunakan 10 tetangga tetangga yang paling dekat untuk membuat prediksi.
     Setelah model diinisialisasi, langkah selanjutnya adalah melatih model menggunakan data latih. Untuk melatih model dengan fitur X_train dan target y_train, gunakan fungsi _fit(X_train, y_train)_.
@@ -250,10 +250,11 @@ Model akan dikembangkan dengan 3 algoritma yang berbeda, dan mencari mana yang m
 
     _Random Forest_ menggunakan atribut kernel, sehingga dapat digunakan untuk membuat prediksi tentang data yang belum dihasilkan. Pendekatan _"divide and conquer"_ adalah apa yang dimaksud pohon keputusan sendiri ketika mempelajari suatu masalah berdasarkan kumpulan data independen yang ditampilkan dalam bagan pohon. Selain itu, pohon keputusan adalah kumpulan pertanyaan yang dijawab secara sistematis, di mana setiap pertanyaan yang diajukan menentukan jawaban berdasarkan nilai atribut dan didasarkan pada pohon daun, yang merupakan prediksi dari variabel kelas [4].
 
-    Gambar 9. Algoritma _Random Forest_
-
     ![th](https://github.com/fannof/project_predictive_analysis/assets/99071605/6e665d4f-12da-4c6f-b42a-7dc4998c66d2)
 
+    Gambar 9. Algoritma _Random Forest_
+
+    _(Sumber: https://www.researchgate.net/profile/Muhammad-Yaseen-Khan/publication)_
 
     Model _Random Forest_ diinisialisasi dengan menentukan beberapa hyperparameter.
     Model _Random Forest_ dilatih menggunakan data latih (X_train dan y_train). Fungsi fit(X_train, y_train) digunakan untuk melatih model.
@@ -273,10 +274,11 @@ Model akan dikembangkan dengan 3 algoritma yang berbeda, dan mencari mana yang m
 
     Algoritma _boosting_ adalah algoritma iteratif yang menyediakan bot berbeda untuk distribusi data pelatihan setiap iterasi. Setiap iterasi peningkatan menambahkan bot ke setiap contoh masalah klasifikasi dan mengurangi bot ke contoh klasifikasi yang benar sehingga data pelatihan dapat didistribusikan secara efektif. Lebih efektif untuk mengatasi masalah ketidakseimbangan kelas, metode _Boosting (AdaBoost)_ yang diusulkan dengan _selective costing ensemble_ mampu meningkatkan identifikasi dari kelas minoritas yang sulit serta menjaga kemampuan klasifikasi dari _class_ mayoritas. Karena prevalensi metode pembelajaran _ensamble_ yang dapat mengurangi variasi, fenomena ini terjadi karena bias rata-rata metode _ensamble_ dalam mengurangi variasi dari satu set kriteria [5].
 
-    Gambar 10. Algoritma _Boosting_
-
     ![ada3](https://github.com/fannof/project_predictive_analysis/assets/99071605/e8579d87-59f8-4e2e-84c2-e97fb3893bf1)
 
+    Gambar 10. Algoritma _Boosting_
+
+    _(Sumber: https://tse3.mm.bing.net/th?id=OIP.Uz18r34jwd4v6kuNGxzpnAHaEF&pid=Api&P=0&h=180)_
 
     Model _Boosting (AdaBoostRegressor)_ diinisialisasi dengan menentukan _hyperparameter_ tertentu. Parameter yang diatur adalah _learning_rate_ dengan nilai 0.05. _random_state_ digunakan untuk memastikan reproduktibilitas hasil.
     Model diarahkan untuk mempelajari hubungan antara fitur (X_train) dan target (y_train). Fungsi _fit(X_train, y_train)_ digunakan untuk melatih model dengan data latih.
